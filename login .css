@@ -10,7 +10,7 @@
     /* border-bottom: solid 1px #ffffff; */
     align-items: center;
     justify-content: center;
-    position: fixed;
+    /* position: fixed; */
     z-index: 10;
 }
 
@@ -75,7 +75,7 @@
 
 
 .banner {
-    border: solid 4px rgb(225, 0, 255);
+    /* border: solid 4px rgb(225, 0, 255); */
 
     background-image: url(imgs/Mbappe\ capa.webp);
     background-repeat: no-repeat;
@@ -92,28 +92,31 @@
 
 .banner img {
     position: absolute;
-    border: solid 4px rgb(255, 0, 0);
-    margin-top: 10vh;
+    /* border: solid 4px rgb(255, 0, 0); */
+ 
     height: 100%;
     width: 100%
 }
 
 .banner .formulario {
-    color: blueviolet;
+    color: rgb(255, 255, 255);
     display: flex;
-    border: solid 4px rgb(17, 0, 255);
+    border: solid 0 0 8px 10px -8px rgb(28, 18, 161);
+    border-radius: 10px;
     height: 400px;
     width: 400px;
     position: relative;
     justify-content: center;
     align-items: center;
-    margin-top: 200px;
+    margin-top: 100px;
     flex-direction: column;
-    background-color: white;
-    right: 5px;
-    margin-left: 35%;
-
+    /* background-color: white; */
+    margin-left: 20px;
+    box-shadow: -11px 19px 20px 0px #000000, 5px 5px 10px 1px #000 inset;
+    background-color: #f3f3f3;
 }
+
+
 .banner h1 {
  color: #000000; 
  justify-content: space-around;
@@ -123,22 +126,39 @@
     color: #000000;
 }
 
+/* .banner .container  {  */
+
+
+
+/* } */
+
 .banner .formulario input {
     justify-content: space-around;
     border: #000000 solid 2px;
+    margin-top: 20px;
 }
+
+.banner .formulario .sp1 {
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+
 
 .banner .formulario button {
     margin-top: 20px;
     border: solid 2px #000000;
-    color: blue;
-    background-color: #000000;
+    color: rgb(255, 255, 255);
+    background-color: #212ab1;
+    width: 100px;
+    height: 30px;
+    margin-top: 10px;
 }
 
 .container {
     left: 15%;
-    border: solid 5px red;
+    /* border: solid 5px red; */
     height: 400px;
-    width: 6000x;
+    /* width: 6000x; */
 
 }
