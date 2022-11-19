@@ -1,5 +1,7 @@
 @import url(main\ .css);
 
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+
 
 .header {
     width: 100%;
@@ -29,6 +31,7 @@
 .logoHeader {
     display: flex;
     align-items: center;
+    /* font-size: large; */
 }
 
 .logoHeader img {
@@ -50,6 +53,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    color: #000000;
 
 }
 
@@ -59,7 +63,9 @@
     margin-left: 15px;
     font-size: 1.3rem;
 }
-.navbar ul
+.navbar li a {
+    color: #000000;
+}
 
 .navbar a {
     color: #000000;
@@ -167,7 +173,9 @@
 
 .bdtp h1 {
     color: #ffffff;
-    font-size: 2.0rem;
+    font-size: 3.0rem;
+    font-family: 'bree serif';
+    
 }
 
 
@@ -241,14 +249,22 @@
 
 .texto p,
 .texto2 p {
+    margin-top: 30px;
     text-align: center;
+    font-size: 1.1rem;
+}
+
+.texto3 {
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.texto3 p {
+    margin-top: 18px;
 }
 
 
-/* .unico {
-    border: solid 3px red;
 
-} */
 
 .box2 {
     text-align: center;

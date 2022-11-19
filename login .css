@@ -56,6 +56,10 @@
     font-size: 1.3rem;
 }
 
+.navbar li a {
+    color: #000000;
+}
+
 .navbar ul .navbar a {
     color: #000000;
 }
@@ -77,11 +81,12 @@
 .banner {
     /* border: solid 4px rgb(225, 0, 255); */
 
-    background-image: url(imgs/Mbappe\ capa.webp);
+    background-image: url(imgs/mbappe\ m.jpg);
     background-repeat: no-repeat;
     display: flex;
     width: 100%;
     height: 100%;
+    top: 10vh;
 
 }
 
@@ -93,7 +98,7 @@
 .banner img {
     position: absolute;
     /* border: solid 4px rgb(255, 0, 0); */
- 
+
     height: 100%;
     width: 100%
 }
@@ -103,44 +108,47 @@
     display: flex;
     border: solid 0 0 8px 10px -8px rgb(28, 18, 161);
     border-radius: 10px;
-    height: 400px;
+    height: 580px;
     width: 400px;
     position: relative;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 75px;
     flex-direction: column;
     /* background-color: white; */
     margin-left: 20px;
-    box-shadow: -11px 19px 20px 0px #000000, 5px 5px 10px 1px #000 inset;
-    background-color: #f3f3f3;
+    box-shadow: -5px 10px 40px 0px #000000
+        /* background-color: #f3f3f3; */
 }
 
 
 .banner h1 {
- color: #000000; 
- justify-content: space-around;
+    color: #000000;
+    font-size: 1.5rem;
+
 }
 
 .banner span {
     color: #000000;
+    font-weight: 600;
 }
 
-/* .banner .container  {  */
-
-
-
-/* } */
 
 .banner .formulario input {
-    justify-content: space-around;
+    color: #000000;
     border: #000000 solid 2px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
+    align-items: center;
+
+    height: 25px;
 }
 
 .banner .formulario .sp1 {
-  margin-top: 20px;
-  margin-bottom: 0px;
+
+    /* border: solid 4px black; */
+    margin-top: 40px;
+    justify-content: left;
+
 }
 
 
@@ -152,7 +160,8 @@
     background-color: #212ab1;
     width: 100px;
     height: 30px;
-    margin-top: 10px;
+    margin-top: 40px;
+    /* margin-bottom: 0px; */
 }
 
 .container {
@@ -161,4 +170,86 @@
     height: 400px;
     /* width: 6000x; */
 
+}
+
+.formulario .cadastro a {
+    color: blue;
+    text-decoration: underline;
+
+}
+
+.formulario .cadastro {
+    margin-top: 30px;
+    font-size: 0.8rem;
+    color: blue;
+}
+
+.cadastro {
+    list-style: none;
+}
+
+.button_banner button {
+    position: relative;
+
+    margin-top: 20px;
+    border: solid 2px #000000;
+    color: rgb(255, 255, 255);
+    background-color: #212ab1;
+    width: 100px;
+    height: 30px;
+    margin-top: 10px;
+
+
+    box-shadow: -5px 5px 5px rgba(19, 18, 18, 0.3);
+    transition: 0.2s;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+
+.button_banner button:hover {
+    transform: scale(1.02);
+    transition: 0.2s;
+}
+
+.button_banner button:active {
+    transform: scale(0.98);
+    transition: 0.2s;
+}
+
+
+.formulario .login a {
+    color: blue;
+    text-decoration: underline;
+
+}
+
+
+.button_banner2 button {
+    position: relative;
+
+    margin-top: 20px;
+    border: solid 2px #000000;
+    color: rgb(255, 255, 255);
+    background-color: #212ab1;
+    width: 100px;
+    height: 40px;
+    margin-top: 10px;
+
+
+    box-shadow: -5px 5px 5px rgba(19, 18, 18, 0.3);
+    transition: 0.2s;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+
+.button_banner2 button:hover {
+    transform: scale(1.02);
+    transition: 0.2s;
+}
+
+.button_banner2 button:active {
+    transform: scale(0.98);
+    transition: 0.2s;
 }
