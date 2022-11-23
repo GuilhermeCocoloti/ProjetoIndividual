@@ -1,0 +1,289 @@
+@import url(main\ .css);
+
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+
+
+.header {
+    width: 100%;
+    display: flex;
+    height: 75px;
+    background-color: rgb(216, 221, 213);
+    color: #000000;
+    /* border-bottom: solid 1px #ffffff; */
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 10;
+
+}
+
+
+.header .container1 {
+    width: 90%;
+    /* border-bottom: solid 1px rgb(0, 255, 21); */
+    /* margin-bottom: 50px; */
+    display: flex;
+    margin-right: 0px;
+    justify-content: space-between;
+
+}
+
+.logoHeader {
+    display: flex;
+    align-items: center;
+    /* font-size: large; */
+}
+
+.logoHeader img {
+    width: 65px;
+    height: 65px;
+    margin-right: 15px;
+}
+
+.logoHeader h1 {
+    font-size: 1.3rem;
+    color: #000000;
+    text-align: center;
+}
+
+
+
+.navbar {
+ /* list-style: none; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #000000;
+
+}
+
+.navbar li {
+    /* list-style: none; */
+    color: #000000;
+    margin-left: 15px;
+    font-size: 1.3rem;
+}
+.navbar li a {
+    color: #000000;
+}
+
+.navbar a {
+    color: #000000;
+}
+
+.navbar a::after {
+    content: '';
+    width: 0;
+    height: 1px;
+    display: block;
+    background-color: #000000;
+    transition: 0.4s;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+
+
+.banner {
+    position: relative;
+}
+
+
+.banner .container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    z-index: 3;
+
+}
+
+.banner p {
+
+    top: 180px;
+    position: absolute;
+    color: #ffffff;
+    font-size: 2.5rem;
+    z-index: 2;
+    font-weight: 700;
+    text-align: left;
+    left: 20px;
+    text-shadow: -3px 4px 5px black;
+}
+
+.button_banner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 4;
+
+}
+
+.button_banner button {
+    position: absolute;
+    top: 400px;
+    left: 250px;
+    /* right: 690px; */
+    background-color: blueviolet;
+    color: white;
+    font-size: 1.5rem;
+    padding: 15px 30px;
+    font-weight: 500;
+    box-shadow: -5px 5px 5px rgba(19, 18, 18, 0.5);
+    transition: 0.2s;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+
+.button_banner button:hover {
+    transform: scale(1.02);
+    transition: 0.2s;
+}
+
+.button_banner button:active {
+    transform: scale(0.98);
+    transition: 0.2s;
+}
+
+
+.banner video {
+    position: relative;
+    /* min-width: 100%;
+    min-height: 100%; */
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    object-fit: cover;
+}
+
+.bdtp {
+    background-color: #000000;
+    border: #ffffff;
+    margin-top: 5%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.bdtp h1 {
+    color: #ffffff;
+    font-size: 3.0rem;
+    font-family: 'bree serif';
+    
+}
+
+
+.social {
+    border: #ffffff;
+    /* width: 100%;
+    height: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.social {
+    background-color: #000000;
+    /* border: solid 3px red; */
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+.box, .box2 {
+    border: solid 3px rgb(255, 251, 0);
+    border-radius: 8px;
+    margin: 50px 10px 10px 10px;
+    height: 320px;
+    width: 450px;
+    background-color: #000000;
+}
+
+.box3 {
+    border: solid 3px rgb(255, 251, 0);
+    border-radius: 8px;
+    margin: 50px 10px 10px 10px;
+    height: 390px;
+    width: 550px;
+    background-color: #000000;
+}
+
+.box img, .box2 img {
+    float: left;
+    width: 205px;
+    height: 314px;
+}
+
+.box3 img {
+   float: left;
+   width: 205px;
+   height: 100%;
+}
+
+
+.box .texto,
+.box2 .texto2, .box3 .texto3 {
+    padding: 10px;
+    /* border: solid 3px #ffffff; */
+    float: left;
+    width: calc(100% - 205px);
+    
+}
+
+.texto h4,
+.texto2 h4, .texto3 h4 {
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.texto p,
+.texto2 p {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.texto3 {
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.texto3 p {
+    margin-top: 18px;
+}
+
+
+
+
+.box2 {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 420px;
+}
+
+.accelerate {
+    display: flex;
+
+}
+
+ul {
+    list-style: none
+  }
+  
+  .ul2 li:before {
+    content: '\2022';
+    margin: 0 5px;
+    color: #fdfdfd /* cor da bolinha */
+   }

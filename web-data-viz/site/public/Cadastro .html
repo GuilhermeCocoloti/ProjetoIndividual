@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | Quiz Ultimate Team</title>
+    <link rel="stylesheet" href="Cadastro .css">
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="container1">
+            <div class="logoHeader">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/EA_Sports_monochrome_logo.svg/1200px-EA_Sports_monochrome_logo.svg.png "
+                    alt="">
+                <h1 class="title1">Quiz FIFA 23 <br> Ultimate Team </h1>
+
+            </div>
+            <ul class="navbar">
+                <li><a href="Home .html">Home</a></li>
+                <li>|</li>
+                <li><a href="Quiz .html">Quiz Ultimate Team</a></li>
+                <li>|</li>
+                <li class="aqui"><a href="Login .html">Login</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="banner">
+        <img src="imgs/mbappe m.jpg" alt="mbappe">
+
+        <div class="container">
+            <div class="formulario2">
+
+                <h1>Seja muito bem vindo!</h1>
+                <div>
+
+                    <label class="sp1" for="nome_input">Nome</label> <br>
+                    <input id="nome_input" placeholder="Insira seu nome" type="text">
+                </div>
+                <div>
+
+                    <label class="sp1" for="email_input">Email</label> <br>
+                    <input id="email_input" placeholder="Insira seu email" type="email">
+                </div>
+                <div>
+
+                    <label class="sp1" for="senha_input">Senha</label> <br>
+                    <input id='senha_input' placeholder="****" type="password"> <br>
+                </div>
+                <input type="checkbox" onclick="mostrarSenha()"> Mostrar senha
+
+                <div>
+
+                    <label class="sp1" for="confirm_senha_input">Confirmação de Senha</label> <br>
+
+                    <input id='confirm_senha_input' placeholder="****" type="password"> <br>
+                </div>
+                <input type="checkbox" onclick="mostrarConfirm()"> Mostrar senha
+
+
+                <div class="button_banner2">
+                    <button onclick="cadastrar()">Cadastrar</button>
+                </div>
+                <span class="login">
+                    <a href="Login .html"> Já possui um cadastro? Clique aqui!</a></span>
+
+            </div>
+        </div>
+
+        <script>
+
+            function mostrarSenha() {
+                if (senha_input.type == 'text') {
+                    senha_input.type = 'password'
+                } else if (senha_input.type == 'password') {
+                    senha_input.type = 'text'
+                }
+
+            }
+
+            function mostrarConfirm() {
+
+
+                if (confirm_senha_input.type == 'password') {
+                    confirm_senha_input.type == 'text'
+                } 
+                
+                else if (confirm_senha_input.type == 'text') {
+                    confirm_senha_input.type == 'password'
+                }
+
+            }
+
+            function cadastrar() {
+        // aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = nome_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirm_senha_input.value;
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            // cardErro.style.display = "block"
+            // mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+            // finalizarAguardar();
+            return false;
+        }
+        else {
+            // setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                // cardErro.style.display = "block";
+
+                // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "Login .html";
+                }, "2000")
+                
+                // limparFormulario();
+                // finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    // function sumirMensagem() {
+    //     cardErro.style.display = "none"
+    // }
+
+
+
+        </script>
