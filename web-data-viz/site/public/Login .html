@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="login .css">
+    <link rel="stylesheet" href="css/main .css">
+    <link rel="stylesheet" href="./css/login .css">
+    
 </head>
 
 <body>
@@ -31,45 +33,53 @@
     <div class="banner">
         <img src="imgs/mbappe m.jpg" alt="">
 
-    <div class="container">
+        <div class="container">
             <div class="formulario">
 
                 <h1>Bem vindo de volta!</h1>
+<div class="ipt"> 
 
-                <span class="sp1">E-mail:</span>
-                <input id="email_input" placeholder="Entre com seu E-mail." type="email">
-                <span class="sp1">Senha:</span>
-                <input id='senha_input' placeholder="****" type="password"> <br>
-                Mostrar senha  <input type="checkbox" onclick="mostrarSenha()"> 
-
-<div class="button_banner">
-                <button onclick="entrar()">Entrar</button>
+    <label class="sp1">E-mail:</label>
+    <input id="email_input" placeholder="Entre com seu E-mail." type="email">
 </div>
+<div class="ipt">
+
+    <label class="sp1">Senha:</label>
+    <input id='senha_input' placeholder="****" type="password"> <br>
+    Mostrar senha <input type="checkbox" onclick="mostrarSenha()">
+</div>
+<div>
+
+    
+    <div class="button_banner">
+        <button onclick="entrar()">Entrar</button>
+    </div>
+                </div>
                 <span class="cadastro">
                     <a href="Cadastro .html"> Ainda não é cadastrado? Clique aqui!</a></span>
 
-            </div> 
-         </div>
-
-        
-    </div>
-
-
+            </div>
+        </div>
 
 
     </div>
 
 
+
+
+    </div>
+
+    <script src="https://unpkg.com/phosphor-icons"></script>
 </body>
 
 <script>
     function mostrarSenha() {
-       if (senha_input.type=='text') {
-        senha_input.type='password'
-       } else if (senha_input.type=='password') {
-           senha_input.type='text'
-           
-       }
+        if (senha_input.type == 'text') {
+            senha_input.type = 'password'
+        } else if (senha_input.type == 'password') {
+            senha_input.type = 'text'
+
+        }
 
 
     }
@@ -84,11 +94,10 @@
             // cardErro.style.display = "block"
             // mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
             // finalizarAguardar();
+            alert(`Preencha os campos corretamente!`)
             return false;
         }
-        else {
-            // setInterval(sumirMensagem, 5000)
-        }
+        
 
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
@@ -107,7 +116,7 @@
 
             if (resposta.ok) {
                 console.log(resposta);
-
+                alert (`Login realizado com sucesso!`)
                 resposta.json().then(json => {
                     console.log(json);
                     console.log(JSON.stringify(json));
@@ -125,7 +134,7 @@
             } else {
 
                 console.log("Houve um erro ao tentar realizar o login!");
-
+                alert(`Houve um erro ao tentar realizar o Login!`)
                 resposta.text().then(texto => {
                     console.error(texto);
                     // finalizarAguardar(texto);

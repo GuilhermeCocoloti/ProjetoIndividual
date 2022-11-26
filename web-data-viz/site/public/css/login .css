@@ -106,7 +106,6 @@
 .banner .formulario {
     color: rgb(0, 0, 0);
     display: flex;
-    border: solid 0 0 8px 10px -8px rgb(28, 18, 161);
     border-radius: 10px;
     height: 580px;
     width: 400px;
@@ -128,18 +127,17 @@
 
 }
 
-.banner span {
+.banner label {
     color: #000000;
     font-weight: 600;
 }
 
 
+
+
 .banner .formulario input {
     color: #000000;
     border: #000000 solid 2px;
-    /* margin-top: 20px; */
-    align-items: center;
-
     height: 25px;
 }
 
@@ -147,7 +145,7 @@
 
     /* border: solid 4px black; */
     margin-top: 40px;
-    justify-content: left;
+
 
 }
 
@@ -208,10 +206,10 @@
     border-radius: 2px;
 }
 
-
-
-
-/* || CÓDIGOS CSS DO FORMULÁRIO PARA CADASTRO ||  */
+.banner .container .formulario .ipt {
+    display: flex;
+    /* flex-direction: ; */
+}
 
 
 

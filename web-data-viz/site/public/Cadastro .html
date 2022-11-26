@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro | Quiz Ultimate Team</title>
-    <link rel="stylesheet" href="Cadastro .css">
+    <link rel="stylesheet" href="./css/main .css">
+    <link rel="stylesheet" href="./css/Cadastro .css">
 
 </head>
 
@@ -32,6 +33,8 @@
     <div class="banner">
         <img src="imgs/mbappe m.jpg" alt="mbappe">
 
+
+        
         <div class="container">
             <div class="formulario2">
 
@@ -39,25 +42,25 @@
                 <div>
 
                     <label class="sp1" for="nome_input">Nome</label> <br>
-                    <input id="nome_input" placeholder="Insira seu nome" type="text">
+                    <input id="nome_input" placeholder="Insira seu nome" type="text" required>
                 </div>
                 <div>
 
                     <label class="sp1" for="email_input">Email</label> <br>
-                    <input id="email_input" placeholder="Insira seu email" type="email">
-                </div>
+                    <input id="email_input" placeholder="Insira seu email" type="email" required>
+                </div> 
                 <div>
 
                     <label class="sp1" for="senha_input">Senha</label> <br>
-                    <input id='senha_input' placeholder="****" type="password"> <br>
+                    <input id='senha_input' placeholder="****" type="password" required> <br>
                 </div>
-                <input type="checkbox" onclick="mostrarSenha()"> Mostrar senha
+                <input type="checkbox" onclick="mostrarSenha() "> Mostrar senha
 
                 <div>
 
                     <label class="sp1" for="confirm_senha_input">Confirmação de Senha</label> <br>
 
-                    <input id='confirm_senha_input' placeholder="****" type="password"> <br>
+                    <input id='confirm_senha_input' placeholder="****" type="password" required> <br>
                 </div>
                 <input type="checkbox" onclick="mostrarConfirm()"> Mostrar senha
 
@@ -70,7 +73,7 @@
 
             </div>
         </div>
-
+        <script src="https://unpkg.com/phosphor-icons"></script>
         <script>
 
             function mostrarSenha() {
@@ -86,11 +89,11 @@
 
 
                 if (confirm_senha_input.type == 'password') {
-                    confirm_senha_input.type == 'text'
+                    confirm_senha_input.type = 'text'
                 } 
                 
                 else if (confirm_senha_input.type == 'text') {
-                    confirm_senha_input.type == 'password'
+                    confirm_senha_input.type = 'password'
                 }
 
             }
@@ -110,11 +113,15 @@
             // mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
 
             // finalizarAguardar();
+            alert (`Os campos precisam ser preenchidos corretamente!`)
+            return false;
+        } 
+
+        if (confirmacaoSenhaVar != senhaVar) {
+            alert (`Senhas não conferem!`)
             return false;
         }
-        else {
-            // setInterval(sumirMensagem, 5000)
-        }
+       
 
         // Enviando o valor da nova input
         fetch("/usuarios/cadastrar", {
@@ -137,7 +144,7 @@
                 // cardErro.style.display = "block";
 
                 // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
+alert (`Login realizado com sucesso!`)
                 setTimeout(() => {
                     window.location = "Login .html";
                 }, "2000")
@@ -145,7 +152,8 @@
                 // limparFormulario();
                 // finalizarAguardar();
             } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
+                alert (`Houve um erro ao tentar realizar o cadastro!`)
+                // throw ("Houve um erro ao tentar realizar o cadastro!");
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
