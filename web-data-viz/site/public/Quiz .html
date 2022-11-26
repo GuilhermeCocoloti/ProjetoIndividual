@@ -40,7 +40,22 @@
 </div>
 
 
-<script src="script .js" type="module"></script>
+<script>
+    
+    window.addEventListener("load", () => {
+        const isSessionActive = sessionStorage.length === 0;
+
+        if(isSessionActive) {
+            alert (`Primeiro, faça um Login para acesssar o nosso Quiz!`)
+            return window.location = "./Login .html";
+        }
+
+        console.log("Você tem uma sessão ativa!");
+    })
+
+    console.log(sessionStorage)
+</script>
+
 </body>
 </html>
 

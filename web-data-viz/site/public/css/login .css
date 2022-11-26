@@ -120,11 +120,9 @@
         /* background-color: #f3f3f3; */
 }
 
-
 .banner h1 {
     color: #000000;
     font-size: 1.5rem;
-
 }
 
 .banner label {
@@ -132,24 +130,11 @@
     font-weight: 600;
 }
 
-
-
-
 .banner .formulario input {
     color: #000000;
     border: #000000 solid 2px;
     height: 25px;
 }
-
-.banner .formulario .sp1 {
-
-    /* border: solid 4px black; */
-    margin-top: 40px;
-
-
-}
-
-
 
 .banner .formulario button {
     margin-top: 20px;
@@ -158,7 +143,6 @@
     background-color: #212ab1;
     width: 100px;
     height: 30px;
-    margin-top: 40px;
     /* margin-bottom: 0px; */
 }
 
@@ -167,15 +151,12 @@
     /* border: solid 5px red; */
     height: 400px;
     /* width: 6000x; */
-
 }
 
 .formulario .cadastro a {
     color: blue;
     text-decoration: underline;
-
 }
-
 
 .formulario .cadastro {
         margin-top: 30px;
@@ -209,6 +190,43 @@
 .banner .container .formulario .ipt {
     display: flex;
     /* flex-direction: ; */
+}
+
+.ipt {
+    margin-top: 16px;
+ 
+    width: 250px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group {
+    border: 1px solid #000;
+    border-radius: 4px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-group i {
+    color: #000;
+}
+
+.input-group > input {
+    padding: 16px;
+
+    border: none !important;
+}
+
+.ipt + .ipt {
+    margin-top: 16px;
+}
+
+.input-group:focus-within  {
+    border: 2px solid #212ab1;
 }
 
 

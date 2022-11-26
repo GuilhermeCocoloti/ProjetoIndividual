@@ -196,3 +196,41 @@
     transform: scale(0.98);
     transition: 0.2s;
 }
+
+
+.ipt {
+    margin-top: 16px;
+ 
+    width: 250px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group {
+    border: 1px solid #000;
+    border-radius: 4px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-group i {
+    color: #000;
+}
+
+.input-group > input {
+    padding: 16px;
+
+    border: none !important;
+}
+
+.ipt + .ipt {
+    margin-top: 16px;
+}
+
+.input-group:focus-within  {
+    border: 2px solid #212ab1;
+}

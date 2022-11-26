@@ -23,7 +23,7 @@
             <ul class="navbar">
                 <li><a href="index.html">Home</a></li>
                 <li>|</li>
-                <li><a href="">Como funciona?</a></li>
+                <li><a href="Quiz .html">Quiz Ultimate</a></li>
                 <li>|</li>
                 <li class="aqui"><a href="Login .html">Login</a></li>
             </ul>
@@ -35,38 +35,42 @@
 
         <div class="container">
             <div class="formulario">
-
                 <h1>Bem vindo de volta!</h1>
-<div class="ipt"> 
 
-    <label class="sp1">E-mail:</label>
-    <input id="email_input" placeholder="Entre com seu E-mail." type="email">
-</div>
-<div class="ipt">
-
-    <label class="sp1">Senha:</label>
-    <input id='senha_input' placeholder="****" type="password"> <br>
-    Mostrar senha <input type="checkbox" onclick="mostrarSenha()">
-</div>
-<div>
-
-    
-    <div class="button_banner">
-        <button onclick="entrar()">Entrar</button>
-    </div>
+                <div class="ipt"> 
+                    <label class="sp1">E-mail:</label>
+                    
+                    <div class="input-group">
+                        <i class="ph-envelope"></i>
+                        <input id="email_input" placeholder="Entre com seu E-mail." type="email">
+                    </div>
                 </div>
+
+                <div class="ipt">
+                    <label class="sp1">Senha:</label>
+
+                    <div class="input-group">
+                        <i class="ph-lock"></i>
+                        <input id='senha_input' placeholder="****" type="password">
+                    </div>
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 1rem; color: #000000;">
+                    Mostrar senha <input type="checkbox" onclick="mostrarSenha()">
+                </div>
+        
+                <div>
+                    <div class="button_banner">
+                        <button onclick="entrar()">Entrar</button>
+                    </div>
+                </div>
+                        
                 <span class="cadastro">
-                    <a href="Cadastro .html"> Ainda não é cadastrado? Clique aqui!</a></span>
+                    <a href="Cadastro .html"> Ainda não é cadastrado? Clique aqui!</a>
+                </span>
 
             </div>
         </div>
-
-
-    </div>
-
-
-
-
     </div>
 
     <script src="https://unpkg.com/phosphor-icons"></script>

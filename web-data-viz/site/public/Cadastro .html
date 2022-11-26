@@ -21,7 +21,7 @@
 
             </div>
             <ul class="navbar">
-                <li><a href="Home .html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li>|</li>
                 <li><a href="Quiz .html">Quiz Ultimate Team</a></li>
                 <li>|</li>
@@ -34,134 +34,155 @@
         <img src="imgs/mbappe m.jpg" alt="mbappe">
 
 
-        
+
         <div class="container">
             <div class="formulario2">
 
                 <h1>Seja muito bem vindo!</h1>
-                <div>
 
-                    <label class="sp1" for="nome_input">Nome</label> <br>
-                    <input id="nome_input" placeholder="Insira seu nome" type="text" required>
+                <div class="ipt">
+                    <label class="sp1" for="nome_input">Nome</label>
+                    <div class="input-group">
+                        <i class="ph-user"></i>
+                        <input id="nome_input" placeholder="Insira seu nome" type="text" required>
+
+                    </div>
                 </div>
-                <div>
 
-                    <label class="sp1" for="email_input">Email</label> <br>
-                    <input id="email_input" placeholder="Insira seu email" type="email" required>
-                </div> 
-                <div>
+                <div class="ipt">
 
-                    <label class="sp1" for="senha_input">Senha</label> <br>
-                    <input id='senha_input' placeholder="****" type="password" required> <br>
+                    <label class="sp1" for="email_input">Email</label>
+                    <div class="input-group">
+                        <i class="ph-envelope"></i>
+                        <input id="email_input" placeholder="Insira seu email" type="email" required>
+                    </div>
                 </div>
-                <input type="checkbox" onclick="mostrarSenha() "> Mostrar senha
 
-                <div>
+
+                <div class="ipt">
+                    <label class="sp1" for="senha_input">Senha</label> 
+                    <div class="input-group">
+                        <i class="ph-lock"></i>>
+
+                        <input id='senha_input' placeholder="****" type="password" required> 
+                    </div>
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 1rem; color: #000000;">
+                    Mostrar senha <input type="checkbox" onclick="mostrarSenha() ">
+                </div>
+
+                <div class="input-group">
+                    <i class="ph-lock"></i>
 
                     <label class="sp1" for="confirm_senha_input">Confirmação de Senha</label> <br>
 
                     <input id='confirm_senha_input' placeholder="****" type="password" required> <br>
                 </div>
-                <input type="checkbox" onclick="mostrarConfirm()"> Mostrar senha
-
-
-                <div class="button_banner2">
-                    <button onclick="cadastrar()">Cadastrar</button>
+                <div
+                    style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 1rem; color: #000000;">
                 </div>
-                <span class="login">
-                    <a href="Login .html"> Já possui um cadastro? Clique aqui!</a></span>
-
+                Mostrar senha <input type="checkbox" onclick="mostrarConfirm()">
             </div>
+
+
+            <div class="button_banner2">
+                <button onclick="cadastrar()">Cadastrar</button>
+            </div>
+            <span class="login">
+                <a href="Login .html"> Já possui um cadastro? Clique aqui!</a></span>
+
         </div>
-        <script src="https://unpkg.com/phosphor-icons"></script>
-        <script>
+    </div>
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <script>
 
-            function mostrarSenha() {
-                if (senha_input.type == 'text') {
-                    senha_input.type = 'password'
-                } else if (senha_input.type == 'password') {
-                    senha_input.type = 'text'
-                }
-
+        function mostrarSenha() {
+            if (senha_input.type == 'text') {
+                senha_input.type = 'password'
+            } else if (senha_input.type == 'password') {
+                senha_input.type = 'text'
             }
 
-            function mostrarConfirm() {
+        }
+
+        function mostrarConfirm() {
 
 
-                if (confirm_senha_input.type == 'password') {
-                    confirm_senha_input.type = 'text'
-                } 
-                
-                else if (confirm_senha_input.type == 'text') {
-                    confirm_senha_input.type = 'password'
-                }
-
+            if (confirm_senha_input.type == 'password') {
+                confirm_senha_input.type = 'text'
             }
 
-            function cadastrar() {
-        // aguardar();
+            else if (confirm_senha_input.type == 'text') {
+                confirm_senha_input.type = 'password'
+            }
 
-        //Recupere o valor da nova input pelo nome do id
-        // Agora vá para o método fetch logo abaixo
-        var nomeVar = nome_input.value;
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
-        var confirmacaoSenhaVar = confirm_senha_input.value;
+        }
 
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
-            // cardErro.style.display = "block"
-            // mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+        function cadastrar() {
+            // aguardar();
 
-            // finalizarAguardar();
-            alert (`Os campos precisam ser preenchidos corretamente!`)
-            return false;
-        } 
+            //Recupere o valor da nova input pelo nome do id
+            // Agora vá para o método fetch logo abaixo
+            var nomeVar = nome_input.value;
+            var emailVar = email_input.value;
+            var senhaVar = senha_input.value;
+            var confirmacaoSenhaVar = confirm_senha_input.value;
 
-        if (confirmacaoSenhaVar != senhaVar) {
-            alert (`Senhas não conferem!`)
+            if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+                // cardErro.style.display = "block"
+                // mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+                // finalizarAguardar();
+                alert(`Os campos precisam ser preenchidos corretamente!`)
+                return false;
+            }
+
+            if (confirmacaoSenhaVar != senhaVar) {
+                alert(`Senhas não conferem!`)
+                return false;
+            }
+
+
+            // Enviando o valor da nova input
+            fetch("/usuarios/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    nomeServer: nomeVar,
+                    emailServer: emailVar,
+                    senhaServer: senhaVar
+                })
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    // cardErro.style.display = "block";
+
+                    // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+                    alert(`Login realizado com sucesso!`)
+                    setTimeout(() => {
+                        window.location = "Login .html";
+                    }, "2000")
+
+                    // limparFormulario();
+                    // finalizarAguardar();
+                } else {
+                    alert(`Houve um erro ao tentar realizar o cadastro!`)
+                    // throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                // finalizarAguardar();
+            });
+
             return false;
         }
-       
-
-        // Enviando o valor da nova input
-        fetch("/usuarios/cadastrar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
-                nomeServer: nomeVar,
-                emailServer: emailVar,
-                senhaServer: senhaVar
-            })
-        }).then(function (resposta) {
-
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                // cardErro.style.display = "block";
-
-                // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-alert (`Login realizado com sucesso!`)
-                setTimeout(() => {
-                    window.location = "Login .html";
-                }, "2000")
-                
-                // limparFormulario();
-                // finalizarAguardar();
-            } else {
-                alert (`Houve um erro ao tentar realizar o cadastro!`)
-                // throw ("Houve um erro ao tentar realizar o cadastro!");
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            // finalizarAguardar();
-        });
-
-        return false;
-    }
 
     // function sumirMensagem() {
     //     cardErro.style.display = "none"
@@ -169,4 +190,4 @@ alert (`Login realizado com sucesso!`)
 
 
 
-        </script>
+    </script>
