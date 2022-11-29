@@ -67,7 +67,7 @@
 
                 <div style="display:none" id="questoes2" class="questoes2">
                     <div class="quest">
-                        <p>2) Em uma jogada de escanteio, Você prefere:</p>
+                        <p>2) Em uma jogada de escanteio, você prefere:</p>
                     </div>
 
 
@@ -131,7 +131,7 @@
 
                 <div style="display:none" id="questoes5" class="questoes5">
                     <div class="quest">
-                        <p>5) Você se sai melhor com jogador que tenha</p>
+                        <p>5) Você se sai melhor com jogador que tenha:</p>
                     </div>
 
                     <div class="resp">
@@ -176,7 +176,7 @@
 
                 <div style="display:none" id="dashboard" class="dashboard">
 
-<span class="msg" id="msg"></span>
+                    <span class="msg" id="msg"></span>
 
                 </div>
 
@@ -213,50 +213,56 @@
         var indexControlled = 0
         var indexLengthy = 0
 
+        var leanVar = `Lean`
+        var averageVar = `Average`
+        var stockyVar = `Stocky`
+        var explosiveVar = `Explosive`
+        var controlledVar = `Controlled`
+        var lengthyVar = `Lengthy`
 
         function result() {
 
 
-            if (indexLean > indexAverage && indexLean > indexStocky) {
+            if (indexLean >= indexAverage && indexLean >= indexStocky) {
 
-                msg.innerHTML = `Parabéns! A sua preferência para o estilo físico (Bodytype) dos jogadores é Lean `
+                msg.innerHTML = `Parabéns! A sua preferência para o estilo físico (Bodytype) <br> dos jogadores é ${leanVar} `
 
                 if (indexExplosive > indexControlled && indexExplosive > indexLengthy) {
-                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é Explosive!`
+                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é ${explosiveVar}!`
 
                 }
 
                 else if (indexLengthy > indexControlled && indexLengthy > indexExplosive) {
-                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é Lengthy!`
+                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é ${lengthyVar}!`
 
                 }
 
 
                 else {
 
-                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é Controlled!`
+                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é ${controlledVar}!`
 
                 }
             }
 
-            if (indexStocky > indexAverage && indexStocky > indexLean) {
+            if (indexStocky >= indexAverage && indexStocky >= indexLean) {
 
-                msg.innerHTML = `Parabéns! A sua preferência para o estilo físico (Bodytype) dos jogadores é Stocky `
+                msg.innerHTML = `Parabéns! A sua preferência para o estilo físico (Bodytype) <br> dos jogadores é ${stockyVar} `
 
                 if (indexExplosive > indexControlled && indexExplosive > indexLengthy) {
-                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é Explosive!`
+                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é ${explosiveVar}!`
 
                 }
 
 
                 else if (indexLengthy > indexControlled && indexLengthy > indexExplosive) {
-                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é Lengthy!`
+                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é ${lengthyVar}!`
 
                 }
 
                 else {
 
-                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é Controlled!`
+                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é ${controlledVar}!`
 
                 }
 
@@ -264,23 +270,25 @@
 
             if (indexAverage >= indexStocky && indexAverage >= indexLean) {
 
-                msg.innerHTML = `Parabéns! A sua preferência para o estilo físico (Bodytype) dos jogadores é Average `
+                msg.innerHTML = `Parabéns! A sua preferência para o estilo físico (Bodytype) <br> dos jogadores é ${averageVar} `
 
                 if (indexExplosive > indexControlled && indexExplosive > indexLengthy) {
-                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é Explosive!`
+                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é ${explosiveVar}!`
 
                 }
 
+
                 else if (indexLengthy > indexControlled && indexLengthy > indexExplosive) {
-                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é Lengthy!`
+                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é ${lengthyVar}!`
 
                 }
 
                 else {
 
-                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é Controlled!`
+                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é ${controlledVar}!`
 
                 }
+
 
             }
 
@@ -404,7 +412,7 @@
                 questoes3.style.display = "none"
                 questoes4.style.display = "block"
 
-                
+
 
             }
 
@@ -418,7 +426,7 @@
                 questoes3.style.display = "none"
                 questoes4.style.display = "block"
 
-               
+
             }
 
         }
@@ -430,11 +438,15 @@
                 questoes3.style.display = "none"
                 questoes4.style.display = "block"
 
-                
+
             }
 
         }
 
+
+        console.log(indexAverage)
+        console.log(indexLean)
+        console.log(indexStocky)
 
     </script>
 

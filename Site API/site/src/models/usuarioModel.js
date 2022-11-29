@@ -27,6 +27,11 @@ function cadastrar(nome, email, senha) {
     var instrucao = `
         INSERT INTO usuario (nome, email, senha) VALUES ('${nome}', '${email}', '${senha}');
     `;
+
+    var instrucao2 = `
+    INSERT INTO usuario (bodytype, accelerate) VALUES ('${bodytype}', '${accelerate}');
+    `;
+
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
