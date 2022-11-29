@@ -1,20 +1,25 @@
-export default [
 
+
+  const questions = [ 
+
+     
     {
-
+          
         question: "Em uma situação de 1vs1 (jogador) a partir do meio-campo, O que você faria?",
         answers: [
             { option: "Tento ganhar na corrida, deixando o marcador para trás." },
             { option: "Divido no corpo e procuro um passe." },
-            { option: "Driblo o marcador e faço uma arrancada" },
+            { option: "Driblo o marcador e faço uma arrancada"},
         ],
     },
+
     {
         question: "Em uma jogada de escanteio, Você prefere:",
+
         answers: [
-            { option: "Cruzar na área e dividir no cabeceio." },
+            { option: "Cruzar na área e dividir no cabeceio."},
             { option: "Passe curto, driblando a marcação." },
-            { option: "Passe curto, tocando a bola até um atacante forte para aguentar jogo de corpo na área." },
+            { option: "Passe curto, tocando a bola até um atacante forte para aguentar jogo de corpo na área."},
         ],
     },
     {
@@ -51,10 +56,13 @@ export default [
             { option: "Um jogador que corra bastante e ágil, porém com um chute abaixo de 81." },
             { option: "Um jogador com um chute totalmente forte e preciso, porém com uma agilidade baixa e velocidade abaixo de 83." },
             { option: "Um jogador com velocidade, chute e agilidade balanceados." },
-
+            
         ],
     },
-
-
-
+    
 ] 
+
+
+
+
+

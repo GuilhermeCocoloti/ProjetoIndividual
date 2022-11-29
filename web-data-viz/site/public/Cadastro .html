@@ -50,52 +50,61 @@
                 </div>
 
                 <div class="ipt">
-
                     <label class="sp1" for="email_input">Email</label>
+
                     <div class="input-group">
                         <i class="ph-envelope"></i>
                         <input id="email_input" placeholder="Insira seu email" type="email" required>
+
                     </div>
                 </div>
 
 
                 <div class="ipt">
-                    <label class="sp1" for="senha_input">Senha</label> 
+                    <label class="sp1" for="senha_input">Senha</label>
                     <div class="input-group">
                         <i class="ph-lock"></i>>
 
-                        <input id='senha_input' placeholder="****" type="password" required> 
+                        <input id='senha_input' placeholder="****" type="password" required>
                     </div>
                 </div>
 
-                <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 1rem; color: #000000;">
-                    Mostrar senha <input type="checkbox" onclick="mostrarSenha() ">
-                </div>
-
-                <div class="input-group">
-                    <i class="ph-lock"></i>
-
-                    <label class="sp1" for="confirm_senha_input">Confirmação de Senha</label> <br>
-
-                    <input id='confirm_senha_input' placeholder="****" type="password" required> <br>
-                </div>
                 <div
-                    style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 1rem; color: #000000;">
+                    style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 16px; color: #000000;">
+                    <input type="checkbox" onclick="mostrarSenha() "> Mostrar senha
                 </div>
-                Mostrar senha <input type="checkbox" onclick="mostrarConfirm()">
+
+                <div class="ipt">
+                    <label class="sp1" for="confirm_senha_input">Confirmação de Senha</label>
+
+                    <div class="input-group">
+                        <i class="ph-lock"></i>
+                        <input id='confirm_senha_input' placeholder="****" type="password" required> <br>
+
+                    </div>
+
+                </div>
+                <div style="display: flex; align-items: center; justify-content: center; gap: 8px; color: #000000;">
+                    <input type="checkbox" onclick="mostrarConfirm()"> Mostrar senha
+                </div>
+
+
+
+                <div class="button_banner2">
+                    <button onclick="cadastrar()">Cadastrar</button>
+                </div>
+
+                <span class="login">
+                    <a href="Login .html"> Já possui um cadastro? Clique aqui!</a>
+                </span>
             </div>
-
-
-            <div class="button_banner2">
-                <button onclick="cadastrar()">Cadastrar</button>
-            </div>
-            <span class="login">
-                <a href="Login .html"> Já possui um cadastro? Clique aqui!</a></span>
-
         </div>
     </div>
+    
     <script src="https://unpkg.com/phosphor-icons"></script>
     <script>
+
+    
 
         function mostrarSenha() {
             if (senha_input.type == 'text') {

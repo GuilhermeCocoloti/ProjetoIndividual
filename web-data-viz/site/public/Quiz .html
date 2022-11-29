@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +13,7 @@
 
 
 <body>
+
 
 
     <div class="header">
@@ -32,30 +34,410 @@
         </div>
     </div>
 
-<div class="banner">
-    <img src="https://www.pnbonline.com.br/storage/webdisco/2022/11/24/480x294/4a38f2ffedfa7b5ff187c13a30ae74d2.jpg" alt="Neymar">
-    <div class='container'>
-        <h2>Quiz Ultimate</h2>
+    <div class="banner">
+        <img src="https://www.papeldeparede.etc.br/fotos/wp-content/uploads/brasil--selecao_6643_1024x768.jpg"
+            alt="Brasil">
+
+
+
+        <div class="container">
+            <div class="formulario2">
+                <h1>Quiz Ultimate Team</h1>
+
+
+                <div id="questoes1" class="questoes1">
+                    <div class="quest">
+                        <p>1) Em uma situação de 1vs1 (jogador) a partir do meio-campo, O que você faria?</p>
+
+                    </div>
+
+
+                    <div class="resp">
+                        <button onclick="average(1)">Tento ganhar na corrida, deixando o marcador para trás.
+                        </button>
+                    </div>
+                    <div class="resp">
+                        <button onclick="stocky(1)">Divido no corpo e procuro um passe.</button>
+                    </div>
+                    <div class="resp">
+                        <button onclick="lean(1)">Driblo o marcador e faço uma arrancada</button>
+                    </div>
+                </div>
+
+
+                <div style="display:none" id="questoes2" class="questoes2">
+                    <div class="quest">
+                        <p>2) Em uma jogada de escanteio, Você prefere:</p>
+                    </div>
+
+
+                    <div class="resp">
+                        <button onclick="stocky(2)">Cruzar na área e dividir no cabeceio.</button>
+                    </div>
+
+                    <div class="resp">
+                        <button onclick="lean(2)">Passe curto, driblando a marcação.</button>
+                    </div>
+
+                    <div class="resp">
+                        <button onclick="average(2)">Passe curto, tocando a bola até um atacante forte para aguentar
+                            jogo
+                            de
+                            corpo na área.</button>
+                    </div>
+                </div>
+
+
+                <div style="display:none" id="questoes3" class="questoes3">
+                    <div class="quest">
+                        <p>3) Em relação a disputas na corrida, você prefere que o jogador faça:</p>
+                    </div>
+
+
+                    <div class="resp">
+                        <button onclick="explosive(1)">Uma arrancada explosiva, caindo a velocidade aos poucos.</button>
+                    </div>
+                    <div class="resp">
+                        <button onclick="lengthy(1)">Uma corrida mais lenta, mas que vai ganhando bastante velocidade
+                            com
+                            o
+                            tempo capaz de superar o adversário.</button>
+                    </div>
+                    <div class="resp">
+                        <button onclick="controlled(1)">Arrancar em uma velocidade equilibrada e mantê-la até o
+                            final.</button>
+                    </div>
+                </div>
+
+                <div style="display:none" id="questoes4" class="questoes4">
+                    <div class="quest">
+                        <p>4) Se fosse para escolher, você escolheria:</p>
+                    </div>
+
+
+                    <div class="resp">
+                        <button onclick="lean(3)">Um jogador entre 1,70 e 1,80, ágil porém fraco.</button>
+                    </div>
+                    <div class="resp">
+                        <button onclick="average(3)">Um jogador entre 1,75 e 1,87, nem muito ágil e nem tão
+                            pesado.</button>
+                    </div>
+                    <div class="resp">
+                        <button onclick="stocky(3)">Um jogador acima de 1,87, forte porém pesado.</button>
+                    </div>
+                </div>
+
+
+
+                <div style="display:none" id="questoes5" class="questoes5">
+                    <div class="quest">
+                        <p>5) Você se sai melhor com jogador que tenha</p>
+                    </div>
+
+                    <div class="resp">
+                        <button onclick="stocky(4)">Um jogador de 3 estrelas de finta, com 5 estrelas de perna
+                            ruim.</button>
+                    </div>
+
+
+
+                    <div class="resp">
+                        <button onclick="lean(4)">Um jogador de 5 estrelas de finta, com 3 estrelas de perna
+                            ruim.</button>
+                    </div>
+
+                    <div class="resp">
+                        <button onclick="average(4)">Um jogador de 4 estrelas de finta, com 4 estrelas de perna
+                            ruim.</button>
+                    </div>
+                </div>
+
+
+
+                <div style="display:none" id="questoes6" class="questoes6">
+                    <div class="quest">
+                        <p>6) O que você prefere?</p>
+                    </div>
+
+
+                    <div class="resp">
+                        <button onclick="lean(5)">Um jogador que corra bastante e ágil, porém com um chute abaixo de
+                            81.</button>
+                    </div>
+
+                    <div class="resp">
+                        <button onclick="stocky(5)">Um jogador com um chute totalmente forte e preciso, porém com uma
+                            agilidade baixa e velocidade abaixo de 83.</button>
+                    </div>
+                    <div class="resp">
+                        <button onclick="average(5)">Um jogador com velocidade, chute e agilidade balanceados.</button>
+                    </div>
+                </div>
+
+                <div style="display:none" id="dashboard" class="dashboard">
+
+<span class="msg" id="msg"></span>
+
+                </div>
+
+
+            </div>
+
+        </div>
     </div>
-</div>
 
 
-<script>
-    
-    window.addEventListener("load", () => {
-        const isSessionActive = sessionStorage.length === 0;
 
-        if(isSessionActive) {
-            alert (`Primeiro, faça um Login para acesssar o nosso Quiz!`)
-            return window.location = "./Login .html";
+    <script>
+
+
+        // VALIDAÇÃO DE LOGIN!!
+
+        window.addEventListener("load", () => {
+            const isSessionActive = sessionStorage.length === 0;
+
+            if (isSessionActive) {
+                alert(`Primeiro, faça um Login para acesssar o nosso Quiz!`)
+                return window.location = "./Login .html";
+            }
+
+            console.log("Você tem uma sessão ativa!");
+        })
+        // 
+
+        var indexLean = 0
+        var indexAverage = 0
+        var indexStocky = 0
+
+        var indexExplosive = 0
+        var indexControlled = 0
+        var indexLengthy = 0
+
+
+        function result() {
+
+
+            if (indexLean > indexAverage && indexLean > indexStocky) {
+
+                msg.innerHTML = `Parabéns! A sua preferência para o estilo físico (Bodytype) dos jogadores é Lean `
+
+                if (indexExplosive > indexControlled && indexExplosive > indexLengthy) {
+                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é Explosive!`
+
+                }
+
+                else if (indexLengthy > indexControlled && indexLengthy > indexExplosive) {
+                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é Lengthy!`
+
+                }
+
+
+                else {
+
+                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é Controlled!`
+
+                }
+            }
+
+            if (indexStocky > indexAverage && indexStocky > indexLean) {
+
+                msg.innerHTML = `Parabéns! A sua preferência para o estilo físico (Bodytype) dos jogadores é Stocky `
+
+                if (indexExplosive > indexControlled && indexExplosive > indexLengthy) {
+                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é Explosive!`
+
+                }
+
+
+                else if (indexLengthy > indexControlled && indexLengthy > indexExplosive) {
+                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é Lengthy!`
+
+                }
+
+                else {
+
+                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é Controlled!`
+
+                }
+
+            }
+
+            if (indexAverage >= indexStocky && indexAverage >= indexLean) {
+
+                msg.innerHTML = `Parabéns! A sua preferência para o estilo físico (Bodytype) dos jogadores é Average `
+
+                if (indexExplosive > indexControlled && indexExplosive > indexLengthy) {
+                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é Explosive!`
+
+                }
+
+                else if (indexLengthy > indexControlled && indexLengthy > indexExplosive) {
+                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é Lengthy!`
+
+                }
+
+                else {
+
+                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é Controlled!`
+
+                }
+
+            }
+
         }
 
-        console.log("Você tem uma sessão ativa!");
-    })
 
-    console.log(sessionStorage)
-</script>
+        function lean(lean) {
+
+            if (lean == 1) {
+                indexLean++
+                questoes1.style.display = "none"
+                questoes2.style.display = "block"
+            }
+
+            if (lean == 2) {
+                indexLean++
+                questoes2.style.display = "none"
+                questoes3.style.display = "block"
+            }
+
+            if (lean == 3) {
+                indexLean++
+                questoes4.style.display = "none"
+                questoes5.style.display = "block"
+            }
+
+            if (lean == 4) {
+                indexLean++
+                questoes5.style.display = "none"
+                questoes6.style.display = "block"
+            }
+
+            if (lean == 5) {
+                indexLean++
+                questoes6.style.display = "none"
+
+                dashboard.style.display = "block"
+
+                result()
+
+            }
+
+        }
+
+        function average(average) {
+
+            if (average == 1) {
+                indexAverage++
+                questoes1.style.display = "none"
+                questoes2.style.display = "block"
+            }
+
+            if (average == 2) {
+                indexAverage++
+                questoes2.style.display = "none"
+                questoes3.style.display = "block"
+            }
+
+            if (average == 3) {
+                indexAverage++
+                questoes4.style.display = "none"
+                questoes5.style.display = "block"
+            }
+
+            if (average == 4) {
+                indexAverage++
+                questoes5.style.display = "none"
+                questoes6.style.display = "block"
+            }
+
+            if (average == 5) {
+                indexAverage++
+                questoes6.style.display = "none"
+                dashboard.style.display = "block"
+
+                result()
+            }
+        }
+
+        function stocky(stocky) {
+
+            if (stocky == 1) {
+                indexStocky++
+                questoes1.style.display = "none"
+                questoes2.style.display = "block"
+            }
+
+            if (stocky == 2) {
+                indexStocky++
+                questoes2.style.display = "none"
+                questoes3.style.display = "block"
+            }
+
+            if (stocky == 3) {
+                indexStocky++
+                questoes4.style.display = "none"
+                questoes5.style.display = "block"
+            }
+
+            if (stocky == 4) {
+                indexStocky++
+                questoes5.style.display = "none"
+                questoes6.style.display = "block"
+            }
+
+            if (stocky == 5) {
+                indexStocky++
+                questoes6.style.display = "none"
+                dashboard.style.display = "block"
+
+                result()
+
+            }
+
+        }
+
+        function explosive(explosive) {
+
+            if (explosive == 1) {
+                indexExplosive++
+                questoes3.style.display = "none"
+                questoes4.style.display = "block"
+
+                
+
+            }
+
+
+        }
+
+        function controlled(controlled) {
+
+            if (controlled == 1) {
+                indexControlled++
+                questoes3.style.display = "none"
+                questoes4.style.display = "block"
+
+               
+            }
+
+        }
+
+        function lengthy(lengthy) {
+
+            if (lengthy == 1) {
+                indexLengthy++
+                questoes3.style.display = "none"
+                questoes4.style.display = "block"
+
+                
+            }
+
+        }
+
+
+    </script>
 
 </body>
-</html>
 
+</html>

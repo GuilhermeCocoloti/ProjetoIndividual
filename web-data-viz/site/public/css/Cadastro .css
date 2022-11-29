@@ -90,7 +90,6 @@
 }
 
 .banner .container {
-    border: solid 4px rgb(21, 255, 0);
     display: flex;
     left: 15%;
     height: 400px;
@@ -102,17 +101,11 @@
 .formulario2 h1 {
     color: #000000;
     font-size: 1.5rem;
-    padding-bottom: 80px;
     text-shadow: -2px 2px 64px #0e268f;
 }
 .banner .sp1 {
     color: #000000;
     font-weight: 600;
-}
-
-.formulario2 div {
-    padding: 10px 0px;
-    color: #000000;
 }
 
 .banner img {
@@ -122,8 +115,6 @@
     height: 100%;
     width: 100%
 }
-
-
 
 .banner .formulario2 {
     color: rgb(0, 0, 0);
@@ -151,6 +142,7 @@
     }
     
 .formulario2 .login a {
+    display: inline-block;
     margin-top: 30px;
     color: blue;
     text-decoration: underline;
@@ -197,6 +189,9 @@
     transition: 0.2s;
 }
 
+.banner .container .formulario .ipt {
+    display: flex;
+}
 
 .ipt {
     margin-top: 16px;

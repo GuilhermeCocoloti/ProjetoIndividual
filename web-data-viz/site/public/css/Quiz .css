@@ -9,7 +9,7 @@
     /* border-bottom: solid 1px #ffffff; */
     align-items: center;
     justify-content: center;
-    position: fixed;
+    position: relative;
     z-index: 10;
 
 }
@@ -83,15 +83,198 @@
 }
 
 
+
+
 .banner {
+
+    background-image: url("https://www.papeldeparede.etc.br/fotos/wp-content/uploads/brasil--selecao_6643_1024x768.jpg");
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
     width: 100%;
+    height: 100%;
+    top: 10vh;
+
 }
+
+.banner .container {
+    /* display: flex; */
+    /* align-items: center; */
+    justify-content: center;
+    height: 400px;
+
+
+}
+
 
 .banner img {
-    transform: translatey(-30%);
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%
+}
+
+.banner .formulario2 {
+    border: solid 3px rgb(25, 216, 25);
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    height: 580px;
+    width: 600px;
+    position: relative;
+    justify-content: center;
+    margin-top: 58px;
+    box-shadow: -5px 10px 40px 0px #000000;
+    
+}
+
+
+
+
+.banner .container .formulario2 h1 {
+    display: flex;
+    right: 200px;
+    margin-top: 20px;
+    justify-content: center;
+    color: #000000;
+    font-size: 2.0rem;
 
 }
+
+.container .formulario2 .questoes1 .quest p {
+
+    
+    color: #000000;
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    
+   
+}
+
+.container .formulario2 .questoes2  .quest p {
+    color: #000000;
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+}
+
+.container .formulario2 .questoes3  .quest p {
+    color: #000000;
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+}
+
+.container .formulario2 .questoes4 .quest  p {
+    color: #000000;
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+}
+
+.container .formulario2 .questoes5 .quest p {
+    color: #000000;
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+}
+
+
+.container .formulario2 .questoes6 .quest p {
+    color: #000000;
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+}
+
+.container .formulario2 .questoes1 {
+    
+    font-size: 1.3rem;
+    justify-content: flex-start;
+    margin-top: 100px;
+}
+
+.container .formulario2 .questoes2 {
+    
+    font-size: 1.3rem;
+    justify-content: flex-start;
+    margin-top: 100px;
+}
+
+.container .formulario2 .questoes3 {
+    
+    font-size: 1.3rem;
+    justify-content: flex-start;
+    margin-top: 100px;
+}
+
+.container .formulario2 .questoes4  {
+
+    font-size: 1.3rem;
+    justify-content: flex-start;
+    margin-top: 100px;
+}
+
+.container .formulario2 .questoes5 {
+    font-size: 1.3rem;
+    justify-content: flex-start;
+    margin-top: 100px;
+}
+
+
+.container .formulario2 .questoes6 {
+    
+    font-size: 1.3rem;
+    justify-content: flex-start;
+    margin-top: 100px;
+    
+}
+
+
+.formulario2 .resp button {
+    margin-left: 100px;
+    justify-content: center;
+    width: 400px;
+    margin-top: 20px;
+    background-color: #d0d315;
+    color: rgb(0, 0, 0);
+    border-color: #000000;
+    padding: 15px 30px;
+    box-shadow: -5px 5px 5px rgba(19, 18, 18, 0.5);
+    transition: 0.2s;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 900;
+}
+
+
+.formulario2 .resp button:hover {
+    transform: scale(1.02);
+    transition: 0.2s;
+}
+
+.formulario2 .resp button:active {
+    transform: scale(0.98);
+    transition: 0.2s;
+}
+
+.formulario2 .dashboard {
+
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-size: 2.0rem;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+.formulario2 .dashboard .msg {
+
+    color: #000000;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-size: 2.0rem;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+
+
+
