@@ -30,6 +30,8 @@
                 <li class="aqui"><a href="Quiz .html">Quiz Ultimate</a></li>
                 <li>|</li>
                 <li><a href="Login .html">Login</a></li>
+                <li>|</li>
+                <li><a href="Cadastro .html">Cadastro</a></li>
             </ul>
         </div>
     </div>
@@ -127,6 +129,8 @@
                     </div>
                 </div>
 
+                <input value="lean" style="display: none;" type="text">
+                <input value="1" style="display: none;" type="text">
 
 
                 <div style="display:none" id="questoes5" class="questoes5">
@@ -223,70 +227,72 @@
         function result() {
 
 
+
+
             if (indexLean >= indexAverage && indexLean >= indexStocky) {
 
                 msg.innerHTML = `Parabéns! A sua preferência para o estilo físico (Bodytype) <br> dos jogadores é ${leanVar} `
 
                 if (indexExplosive > indexControlled && indexExplosive > indexLengthy) {
                     msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é ${explosiveVar}!`
-
+                    post(leanVar, explosiveVar)
                 }
 
                 else if (indexLengthy > indexControlled && indexLengthy > indexExplosive) {
                     msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é ${lengthyVar}!`
-
+                    post(leanVar, lengthyVar)
                 }
 
 
                 else {
 
                     msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é ${controlledVar}!`
-
+                    post(leanVar, controlledVar)
                 }
             }
 
-            if (indexStocky >= indexAverage && indexStocky >= indexLean) {
+         else if (indexStocky >= indexAverage && indexStocky >= indexLean) {
 
                 msg.innerHTML = `Parabéns! A sua preferência para o estilo físico (Bodytype) <br> dos jogadores é ${stockyVar} `
 
                 if (indexExplosive > indexControlled && indexExplosive > indexLengthy) {
                     msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é ${explosiveVar}!`
-
+                    post(stockyVar, explosiveVar)
                 }
 
 
                 else if (indexLengthy > indexControlled && indexLengthy > indexExplosive) {
                     msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é ${lengthyVar}!`
-
+                    post(stockyVar, lengthyVar)
                 }
 
                 else {
 
                     msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é ${controlledVar}!`
-
+                    post(stockyVar, controlledVar)
                 }
 
             }
 
-            if (indexAverage >= indexStocky && indexAverage >= indexLean) {
+          else if (indexAverage >= indexStocky && indexAverage >= indexLean) {
 
                 msg.innerHTML = `Parabéns! A sua preferência para o estilo físico (Bodytype) <br> dos jogadores é ${averageVar} `
 
                 if (indexExplosive > indexControlled && indexExplosive > indexLengthy) {
                     msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é ${explosiveVar}!`
-
+                    post(averageVar, explosiveVar)
                 }
 
 
                 else if (indexLengthy > indexControlled && indexLengthy > indexExplosive) {
                     msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é ${lengthyVar}!`
-
+                    post(averageVar, lengthyVar)
                 }
 
                 else {
 
                     msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é ${controlledVar}!`
-
+                    post(averageVar, controlledVar)
                 }
 
 
@@ -443,10 +449,43 @@
 
         }
 
+        function post(bodytype, accelerate) {
 
-        console.log(indexAverage)
-        console.log(indexLean)
-        console.log(indexStocky)
+            var idusuario = sessionStorage.getItem("ID_USUARIO")
+
+            console.log(`Esse é o idUsuario ` + idusuario)
+
+
+            fetch("/usuarios/bodytype", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    bodytype: bodytype,
+                    accelerate: accelerate,
+                    idusuario: idusuario
+                })
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    // alert(`inseriu`)
+
+                } else {
+                    alert(`Houve um erro ao tentar realizar o cadastro!`)
+                    // throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                // finalizarAguardar();
+            });
+        }
+
+
 
     </script>
 
