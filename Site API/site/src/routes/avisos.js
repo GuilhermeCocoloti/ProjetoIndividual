@@ -11,6 +11,14 @@ router.get("/listar", function (req, res) {
     avisoController.listar(req, res);
 });
 
+router.get("/listar2", function (req, res) {
+    avisoController.listar2(req, res);
+});
+
+router.get("/listar3", function (req, res) {
+    avisoController.listar3(req, res);
+});
+
 router.get("/listar/:idUsuario", function (req, res) {
     avisoController.listarPorUsuario(req, res);
 });

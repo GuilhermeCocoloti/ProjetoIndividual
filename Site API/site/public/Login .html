@@ -71,6 +71,13 @@
                     <a href="Cadastro .html"> Ainda não é cadastrado? Clique aqui!</a>
                 </span>
 
+                <div class="button_banner">
+                    <button onclick="limparSessao()">Sair</button>
+                </div>
+            </div>
+
+
+
             </div>
         </div>
     </div>
@@ -90,6 +97,15 @@
 
     }
 
+
+    function limparSessao() {
+    // aguardar();
+    sessionStorage.clear();
+    // finalizarAguardar();
+    window.location = "../index.html"
+}
+
+    
     function entrar() {
         // aguardar();
 

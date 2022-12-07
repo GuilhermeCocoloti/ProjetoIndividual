@@ -8,7 +8,7 @@
     <title>Quiz Ultimate Team</title>
     <link rel="stylesheet" href="./css/main .css">
     <link rel="stylesheet" href="./css/Quiz .css">
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 
@@ -182,7 +182,16 @@
 
                     <span class="msg" id="msg"></span>
 
+                    <span class="msg" id="msg2"></span>
+
+                    <div style="width: 300px;">
+                        <canvas id="myChart3" style="position: relative; height:10vh; width:10vw"></canvas>
+
+                    </div>
+
                 </div>
+
+                <div></div>
 
 
             </div>
@@ -224,10 +233,10 @@
         var controlledVar = `Controlled`
         var lengthyVar = `Lengthy`
 
+        var vt_bodytype = ['Lean', 'Average', 'Stocky'];
+        var vt_accelerate = ['Lean','Average','Lengthy'];
+
         function result() {
-
-
-
 
             if (indexLean >= indexAverage && indexLean >= indexStocky) {
 
@@ -293,11 +302,12 @@
 
                     msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é ${controlledVar}!`
                     post(averageVar, controlledVar)
+
                 }
 
 
             }
-
+            atualizarFeed();
         }
 
 
@@ -485,7 +495,171 @@
             });
         }
 
+        var data3 = {
+        labels: [
+            'lean',
+            'average',
+            'stocky'
+        ],
+        datasets: [{
+            label: 'Usarios que fizeram o quiz',
+            data: [],
+            backgroundColor: [
+                'rgb(220,20,60)',
+                'rgb(34,139,34)',
+                'rgb(131,111,255)'
+            ],
+            hoverOffset: 4
+        }]
+    };
 
+    const config3 = {
+        type: 'doughnut',
+        data: data3,
+    };
+
+        function atualizarFeed() {
+        //aguardar();
+        // fetch("/avisos/listar").then(function (resposta) {
+            // if (resposta.ok) {
+                // if (resposta.status == 204) {
+                //     var feed = document.getElementById("feed_container");
+                //     var mensagem = document.createElement("span");
+                //     mensagem.innerHTML = "Nenhum resultado encontrado."
+                //     feed.appendChild(mensagem);
+                //     throw "Nenhum resultado encontrado!!";
+                // }
+
+                // resposta.json().then(function (resposta) {
+                //     console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                //     var msg2 = document.getElementById("msg2");
+                //     for (let i = 0; i < resposta.length; i++) {
+                //         var publicacao = resposta[i];
+
+                        // criando e manipulando elementos do HTML via JavaScript
+                        var spanLean = document.createElement("span");
+                        var spanAvg = document.createElement("span");
+                        var spanStocky = document.createElement("span");
+                        // var spanExp = document.createElement("span");
+                        // var spanCtrl = document.createElement("span");
+                        // var spanLengthy = document.createElement("span");
+
+
+                        spanLean.innerHTML = `<br><br> <span id="leanQtd" style="color: black;">X</span> escolheram Lean <b>`;
+                        spanAvg.innerHTML = `<br> <span id="averageQtd" style="color: black;">X</span> escolheram Average <b>`;
+                        spanStocky.innerHTML = `<br> <span id="stockyQtd" style="color: black;">X</span> escolheram Stocky <b>`;
+
+                        // spanExp.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
+                        // spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
+                        // spanCtrl.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
+                        // spanLengthy.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
+
+                        spanLean.className = "msg";
+                        spanAvg.className = "msg";
+                        spanStocky.className = "msg";
+                        // spanTitulo.className = "publicacao-titulo";
+                        // divDescricao.className = "publicacao-descricao";
+
+                        msg2.appendChild(spanLean);
+                        msg2.appendChild(spanAvg);
+                        msg2.appendChild(spanStocky);
+
+                        listar()
+                        
+                        
+        //             }
+
+        //             finalizarAguardar();
+        //         });
+        //     } else {
+        //         throw ('Houve um erro na API!');
+        //     }
+        // }).catch(function (resposta) {
+        //     console.error(resposta);
+        //     // finalizarAguardar();
+        // });
+    }
+    
+    function listar() {
+        
+        fetch("/avisos/listar").then(function (resposta) {
+            if (resposta.ok) {
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                    leanQtd.innerHTML = `${resposta[0].body}`
+                    data3.datasets[0].data.push(resposta[0].body)
+
+                    listar2()
+                    
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+
+        });
+    }
+
+    function listar2() {
+        
+        fetch("/avisos/listar2").then(function (resposta) {
+            if (resposta.ok) {
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                    averageQtd.innerHTML = `${resposta[0].body}`
+
+                    data3.datasets[0].data.push(resposta[0].body)
+    
+                    listar3()
+                    
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+
+        });
+    }
+
+    function listar3() {
+        
+        fetch("/avisos/listar3").then(function (resposta) {
+            if (resposta.ok) {
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                    stockyQtd.innerHTML = `${resposta[0].body}`
+
+
+
+
+  
+    data3.datasets[0].data.push(resposta[0].body)
+
+    const myChart3 = new Chart(
+                        document.getElementById('myChart3'),
+                        config3
+                    
+                    );
+
+                    
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+
+        });
+    }
 
     </script>
 

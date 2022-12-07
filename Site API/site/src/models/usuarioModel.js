@@ -18,6 +18,25 @@ function entrar(email, senha) {
     return database.executar(instrucao);
 }
 
+// function listarPref() {
+
+//     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listarPref()");
+//     var instrucao3 = `
+//     select count(bodytype) from preferencia where bodytype = '${}';
+//     select count(bodytype) from preferencia where bodytype = '${}';
+//     select count(bodytype) from preferencia where bodytype = '${}';
+    
+//     select count(accelerate) from preferencia where accelerate = '${}';
+//     select count(accelerate) from preferencia where accelerate = '${}';
+//     select count(accelerate) from preferencia where accelerate = '${}';
+
+//     `;
+
+//     console.log("Executando a instrução SQL: \n" + instrucao3);
+//     return database.executar(instrucao3);
+
+// }
+
 
 function bodytype(bodytype,accelerate,idusuario) {
 
