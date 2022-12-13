@@ -87,9 +87,12 @@
 
 <script>
     function mostrarSenha() {
+
         if (senha_input.type == 'text') {
             senha_input.type = 'password'
-        } else if (senha_input.type == 'password') {
+        } 
+        
+        else if (senha_input.type == 'password') {
             senha_input.type = 'text'
 
         }
@@ -103,6 +106,8 @@
     sessionStorage.clear();
     // finalizarAguardar();
     window.location = "../index.html"
+
+    
 }
 
     

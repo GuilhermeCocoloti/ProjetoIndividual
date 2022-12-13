@@ -37,14 +37,14 @@
     </div>
 
     <div class="banner">
-        <img src="https://www.papeldeparede.etc.br/fotos/wp-content/uploads/brasil--selecao_6643_1024x768.jpg"
+        <img src="https://livewallpaperhd.com/wp-content/uploads/2018/03/FIFA-World-Cup-HD-Wallpaper.jpg"
             alt="Brasil">
 
 
 
         <div class="container">
             <div class="formulario2">
-                <h1>Quiz Ultimate Team</h1>
+                <h1 id="titulo">Quiz Ultimate Team</h1>
 
 
                 <div id="questoes1" class="questoes1">
@@ -128,9 +128,9 @@
                         <button onclick="stocky(3)">Um jogador acima de 1,87, forte porém pesado.</button>
                     </div>
                 </div>
-
+<!-- 
                 <input value="lean" style="display: none;" type="text">
-                <input value="1" style="display: none;" type="text">
+                <input value="1" style="display: none;" type="text"> -->
 
 
                 <div style="display:none" id="questoes5" class="questoes5">
@@ -184,8 +184,8 @@
 
                     <span class="msg" id="msg2"></span>
 
-                    <div style="width: 300px;">
-                        <canvas id="myChart3" style="position: relative; height:10vh; width:10vw"></canvas>
+                    <div class="graf">
+                        <canvas class="grafico" id="myChart3" style="display: block; box-sizing: border-box;" width="100" height="100"></canvas>
 
                     </div>
 
@@ -240,44 +240,44 @@
 
             if (indexLean >= indexAverage && indexLean >= indexStocky) {
 
-                msg.innerHTML = `Parabéns! A sua preferência para o estilo físico (Bodytype) <br> dos jogadores é ${leanVar} `
+                msg.innerHTML = `Parabéns! A sua preferência para o Bodytype dos jogadores é ${leanVar} `
 
                 if (indexExplosive > indexControlled && indexExplosive > indexLengthy) {
-                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é ${explosiveVar}!`
+                    msg.innerHTML += `e seu estilo de corrida é ${explosiveVar}!`
                     post(leanVar, explosiveVar)
                 }
 
                 else if (indexLengthy > indexControlled && indexLengthy > indexExplosive) {
-                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é ${lengthyVar}!`
+                    msg.innerHTML += `e seu estilo de corrida é ${lengthyVar}!`
                     post(leanVar, lengthyVar)
                 }
 
 
                 else {
 
-                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é ${controlledVar}!`
+                    msg.innerHTML += `e seu estilo de corrida é ${controlledVar}!`
                     post(leanVar, controlledVar)
                 }
             }
 
          else if (indexStocky >= indexAverage && indexStocky >= indexLean) {
 
-                msg.innerHTML = `Parabéns! A sua preferência para o estilo físico (Bodytype) <br> dos jogadores é ${stockyVar} `
+                msg.innerHTML = `Parabéns! A sua preferência para o Bodytype dos jogadores é ${stockyVar} `
 
                 if (indexExplosive > indexControlled && indexExplosive > indexLengthy) {
-                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é ${explosiveVar}!`
+                    msg.innerHTML += `e seu estilo de corrida é ${explosiveVar}!`
                     post(stockyVar, explosiveVar)
                 }
 
 
                 else if (indexLengthy > indexControlled && indexLengthy > indexExplosive) {
-                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é ${lengthyVar}!`
+                    msg.innerHTML += `e seu estilo de corrida é ${lengthyVar}!`
                     post(stockyVar, lengthyVar)
                 }
 
                 else {
 
-                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é ${controlledVar}!`
+                    msg.innerHTML += `e seu estilo de corrida é ${controlledVar}!`
                     post(stockyVar, controlledVar)
                 }
 
@@ -285,22 +285,22 @@
 
           else if (indexAverage >= indexStocky && indexAverage >= indexLean) {
 
-                msg.innerHTML = `Parabéns! A sua preferência para o estilo físico (Bodytype) <br> dos jogadores é ${averageVar} `
+                msg.innerHTML = `Parabéns! A sua preferência para o Bodytype dos jogadores é ${averageVar} `
 
                 if (indexExplosive > indexControlled && indexExplosive > indexLengthy) {
-                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é ${explosiveVar}!`
+                    msg.innerHTML += `e seu estilo de corrida é ${explosiveVar}!`
                     post(averageVar, explosiveVar)
                 }
 
 
                 else if (indexLengthy > indexControlled && indexLengthy > indexExplosive) {
-                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é ${lengthyVar}!`
+                    msg.innerHTML += `e seu estilo de corrida é ${lengthyVar}!`
                     post(averageVar, lengthyVar)
                 }
 
                 else {
 
-                    msg.innerHTML += `e seu estilo de corrida (AcceleRATE) é ${controlledVar}!`
+                    msg.innerHTML += `e seu estilo de corrida é ${controlledVar}!`
                     post(averageVar, controlledVar)
 
                 }
@@ -340,6 +340,8 @@
             if (lean == 5) {
                 indexLean++
                 questoes6.style.display = "none"
+                titulo.style.display = "none"
+
 
                 dashboard.style.display = "block"
 
@@ -379,6 +381,7 @@
                 indexAverage++
                 questoes6.style.display = "none"
                 dashboard.style.display = "block"
+                titulo.style.display = "none"
 
                 result()
             }
@@ -413,6 +416,7 @@
             if (stocky == 5) {
                 indexStocky++
                 questoes6.style.display = "none"
+                titulo.style.display = "none"
                 dashboard.style.display = "block"
 
                 result()
@@ -459,6 +463,8 @@
 
         }
 
+        // Enviando dados do bodytype e accelerate pro BD 
+
         function post(bodytype, accelerate) {
 
             var idusuario = sessionStorage.getItem("ID_USUARIO")
@@ -495,11 +501,13 @@
             });
         }
 
+// Grafico do JS 
+
         var data3 = {
         labels: [
-            'lean',
-            'average',
-            'stocky'
+            'Lean',
+            'Average',
+            'Stocky'
         ],
         datasets: [{
             label: 'Usarios que fizeram o quiz',
@@ -518,48 +526,26 @@
         data: data3,
     };
 
+    //
         function atualizarFeed() {
-        //aguardar();
-        // fetch("/avisos/listar").then(function (resposta) {
-            // if (resposta.ok) {
-                // if (resposta.status == 204) {
-                //     var feed = document.getElementById("feed_container");
-                //     var mensagem = document.createElement("span");
-                //     mensagem.innerHTML = "Nenhum resultado encontrado."
-                //     feed.appendChild(mensagem);
-                //     throw "Nenhum resultado encontrado!!";
-                // }
-
-                // resposta.json().then(function (resposta) {
-                //     console.log("Dados recebidos: ", JSON.stringify(resposta));
-
-                //     var msg2 = document.getElementById("msg2");
-                //     for (let i = 0; i < resposta.length; i++) {
-                //         var publicacao = resposta[i];
+        
 
                         // criando e manipulando elementos do HTML via JavaScript
                         var spanLean = document.createElement("span");
                         var spanAvg = document.createElement("span");
                         var spanStocky = document.createElement("span");
-                        // var spanExp = document.createElement("span");
-                        // var spanCtrl = document.createElement("span");
-                        // var spanLengthy = document.createElement("span");
+                        
 
 
-                        spanLean.innerHTML = `<br><br> <span id="leanQtd" style="color: black;">X</span> escolheram Lean <b>`;
-                        spanAvg.innerHTML = `<br> <span id="averageQtd" style="color: black;">X</span> escolheram Average <b>`;
-                        spanStocky.innerHTML = `<br> <span id="stockyQtd" style="color: black;">X</span> escolheram Stocky <b>`;
+                        spanLean.innerHTML = `<br><br> <span id="leanQtd" style="color: black;">X</span>  pessoas escolheram Lean <b>`;
+                        spanAvg.innerHTML = `<br> <span id="averageQtd" style="color: black;">X</span> pessoas escolheram Average <b>`;
+                        spanStocky.innerHTML = `<br> <span id="stockyQtd" style="color: black;">X</span> pessoas escolheram Stocky <b>`;
 
-                        // spanExp.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
-                        // spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
-                        // spanCtrl.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
-                        // spanLengthy.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
 
                         spanLean.className = "msg";
                         spanAvg.className = "msg";
                         spanStocky.className = "msg";
-                        // spanTitulo.className = "publicacao-titulo";
-                        // divDescricao.className = "publicacao-descricao";
+                        
 
                         msg2.appendChild(spanLean);
                         msg2.appendChild(spanAvg);
@@ -568,19 +554,11 @@
                         listar()
                         
                         
-        //             }
-
-        //             finalizarAguardar();
-        //         });
-        //     } else {
-        //         throw ('Houve um erro na API!');
-        //     }
-        // }).catch(function (resposta) {
-        //     console.error(resposta);
-        //     // finalizarAguardar();
-        // });
+      
     }
     
+// Puxando dados do banco de dados pro front
+
     function listar() {
         
         fetch("/avisos/listar").then(function (resposta) {
@@ -638,6 +616,7 @@
 
                     stockyQtd.innerHTML = `${resposta[0].body}`
 
+//
 
 
 
